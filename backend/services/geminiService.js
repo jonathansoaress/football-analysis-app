@@ -52,16 +52,16 @@ class GeminiService {
 
     try {
       const response = await this.ai.models.generateContent({
-        model: 'gemini-2.5-pro',
+        model: 'gemini-2.5-flash',
         contents: prompt,
         config: {
           tools: [{ googleSearch: {} }],
-          responseMimeType: "application/json",
           temperature: 0.7,
         }
       });
 
-      const responseText = response.text;
+      // Remove a formatação markdown se houver
+      const responseText = response.text.replace(/```json/g, '').replace(/```/g, '').trim();
       
       // Parse do JSON retornado pelo Gemini
       const analysisObj = JSON.parse(responseText);
