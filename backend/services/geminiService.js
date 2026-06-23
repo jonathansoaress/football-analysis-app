@@ -27,11 +27,11 @@ class GeminiService {
     
     TIME MANDANTE (${homeTeamName}):
     - Posição atual / Informações: ${JSON.stringify(homeTeamData.info)}
-    - Últimos 5 jogos: ${homeTeamData.recentMatches.map(m => \`\${m.homeTeam.name} \${m.score.fullTime.home}-\${m.score.fullTime.away} \${m.awayTeam.name}\`).join(' | ')}
+    - Últimos 5 jogos: ${homeTeamData.recentMatches.map(m => m.homeTeam.name + ' ' + m.score.fullTime.home + '-' + m.score.fullTime.away + ' ' + m.awayTeam.name).join(' | ')}
     
     TIME VISITANTE (${awayTeamName}):
     - Posição atual / Informações: ${JSON.stringify(awayTeamData.info)}
-    - Últimos 5 jogos: ${awayTeamData.recentMatches.map(m => \`\${m.homeTeam.name} \${m.score.fullTime.home}-\${m.score.fullTime.away} \${m.awayTeam.name}\`).join(' | ')}
+    - Últimos 5 jogos: ${awayTeamData.recentMatches.map(m => m.homeTeam.name + ' ' + m.score.fullTime.home + '-' + m.score.fullTime.away + ' ' + m.awayTeam.name).join(' | ')}
     
     TAREFA:
     Com base nesses dados e **usando a ferramenta de busca do Google para obter informações em tempo real**, pesquise notícias recentes sobre ambas as seleções, como:
